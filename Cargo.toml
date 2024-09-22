@@ -1,0 +1,17 @@
+[package]
+name = "vox-mirror"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+cpal = "0.15.3"
+flume = "0.11.0"
+oneshot = "0.1.8"
+slint = "1.7.2"
+thiserror = "1.0.63"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+[build-dependencies]
+slint-build = "1.7.2"

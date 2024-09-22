@@ -1,0 +1,25 @@
+import { Button, VerticalBox, HorizontalBox } from "std-widgets.slint";
+export enum RecorderState {
+        Stopped,
+        Started,
+}
+export component MainWindow inherits Window {
+    min-width: 256px;
+    min-height: 180px;
+    callback start_recording() -> RecorderState;
+    callback stop_recording() -> RecorderState;
+    property <RecorderState> recorder-state;
+    if recorder-state == RecorderState.Stopped: Button {
+        text: "Start Recording";
+        clicked => {
+            root.recorder-state = start_recording();
+        }
+    }
+    if recorder-state == RecorderState.Started: Button {
+        text: "Stop Recording";
+        primary: true;
+        clicked => {
+            root.recorder-state = stop_recording();
+        }
+    }
+}
